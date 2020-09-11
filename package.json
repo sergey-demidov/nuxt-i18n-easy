@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-i18n-translator",
+  "name": "nuxt-i18n-easy",
   "version": "1.0.1",
-  "description": "Automatic multilingual translator for nuxt-i18n",
+  "description": "Automatic multilingual easy for nuxt-i18n",
   "main": "lib/module.js",
   "scripts": {
     "test": "echo \"No test specified\" && exit 0"
@@ -11,23 +11,23 @@
     "test"
   ],
   "bin": {
-    "translator": "./bin/command.js"
+    "easy": "./bin/command.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sergey-demidov/nuxt-i18n-translator.git"
+    "url": "git+https://github.com/sergey-demidov/nuxt-i18n-easy.git"
   },
   "keywords": [
     "nuxt",
     "i18n",
-    "translator"
+    "easy"
   ],
   "author": "Sergey Demidov <sergey.k.demidov@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sergey-demidov/nuxt-i18n-translator/issues"
+    "url": "https://github.com/sergey-demidov/nuxt-i18n-easy/issues"
   },
-  "homepage": "https://github.com/sergey-demidov/nuxt-i18n-translator#readme",
+  "homepage": "https://github.com/sergey-demidov/nuxt-i18n-easy#readme",
   "devDependencies": {
     "axios": "^0.20.0",
     "consola": "^2.15.0",
