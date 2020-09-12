@@ -5,7 +5,8 @@
   "main": "lib/module.js",
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
-    "lint": "eslint --ext .js,.vue ."
+    "lint": "eslint --ext .js,.vue .",
+    "release": "npx test && standard-version && git push --follow-tags && npm publish"
   },
   "files": [
     "lib",
