@@ -17,7 +17,7 @@ The I18n is great. But what about translating an existing project with hundreds 
 
 ## Feautures
 
-- Based on [nuxt-i18n](https://github.com/nuxt-community/i18n-module)'s  [lazy-load translations](https://i18n.nuxtjs.org/lazy-load-translations))
+- Based on [nuxt-i18n](https://github.com/nuxt-community/i18n-module)'s  [lazy-load translations](https://i18n.nuxtjs.org/lazy-load-translations)
 - Uses _existing_ strings as object properties
 - _Recursively_ scans the source code directories in the project
 - Finds the strings that need translation
@@ -42,7 +42,7 @@ npm install nuxt-i18n-easy # or yarn add nuxt-i18n-easy
   ]
 }
 ```
-#### 3. Add `i18n` & `i18nTranslate` to the `root` of `nuxt.config.js`
+#### 3. Add `i18n` & `i18nEasy` to the `root` of `nuxt.config.js`
 ```js
 export default {
   i18n: {
@@ -61,7 +61,7 @@ export default {
     lazy: true,
     langDir: 'lang/',
   },
-  i18nTranslate: {
+  i18nEasy: {
     directories: [             // default directories for search
       './layouts',
       './pages',
