@@ -9,10 +9,11 @@
 
 ## Introduction
 
-The I18n is great. But what about translating an existing project with hundreds of buttons, prompts and tips in multiple languages? 
+#### The I18n is great. 
+But what about translating an existing project with hundreds of buttons, prompts and tips in multiple languages? 
 
 :scream: Looks intimidating?
- 
+
 :angel: No need to be afraid, `nuxt-i18n-easy` will save us.
 
 ## Feautures
@@ -34,7 +35,7 @@ The I18n is great. But what about translating an existing project with hundreds 
 npm install nuxt-i18n-easy # or yarn add nuxt-i18n-easy
 ```
 #### 2. Add `nuxt-i18n-easy` to the `modules` section of `nuxt.config.js`
-```js
+```javascript
 {
   modules: [
     'nuxt-i18n',
@@ -43,7 +44,7 @@ npm install nuxt-i18n-easy # or yarn add nuxt-i18n-easy
 }
 ```
 #### 3. Add `i18n` & `i18nEasy` to the `root` of `nuxt.config.js`
-```js
+```javascript
 export default {
   i18n: {
     locales: [
@@ -77,7 +78,7 @@ mkdir lang
 touch lang/en.js
 touch lang/ru.js
 ```
-#### 5. [Buy me a coffee :coffee:](https://www.paypal.com/paypalme/sergeydemidov)
+#### 5. Buy me a coffee [:coffee:](https://www.paypal.com/paypalme/sergeydemidov)
 ___
 
 ## Usage
@@ -135,7 +136,7 @@ Something needs to be fixed here, but in general this is what we need to start
 ```
 > A complete list of supported codes is [here](https://cloud.google.com/translate/docs/languages)
 
-#### 5. [Buy me coffee with doughnut :coffee: :doughnut:](https://www.paypal.com/paypalme/sergeydemidov)
+#### 5. Buy me coffee with doughnut [:coffee: :doughnut:](https://www.paypal.com/paypalme/sergeydemidov)
 
 ## Q&A
 
@@ -179,12 +180,12 @@ en.js  en.js.2020-09-10-15-49  ru.js  ru.js.2020-09-10-15-49
 
 
 #### Q. Why are you drinking so much coffee?
-##### A. I don't just drink coffee. You can [buy me a beer :beer::beer:](https://www.paypal.com/paypalme/sergeydemidov)
+##### A. I don't just drink coffee. You can buy me a beer [:beer::beer:](https://www.paypal.com/paypalme/sergeydemidov)
 
 ## Development
 
-1. Clone this repository
-2. [Link](https://docs.npmjs.com/cli/link) it to your amazing [nuxt](https://github.com/nuxt/nuxt.js) project
+- Clone this repository
+- [Link](https://docs.npmjs.com/cli/link) it to your amazing [nuxt](https://github.com/nuxt/nuxt.js) project
 ```bash
 cd nuxt-i18n-easy
 npm link
@@ -193,12 +194,21 @@ npm link nuxt-i18n-easy
 cd ../nuxt-i18n-easy
 ```
 > It is better to use `npm` here, as in my case `yarn` for some reason does __not__ create a symlinks in the `node_modules/.bin` directory
-3. Edit files
+- Edit files
 
 ## Known Issues
 
 The `v-tr` directive does __not__ support nested tags
 
+## If you really read up to here
+
+There, under the hood is one more feature. You may use `String.lp()` as shortcut to `nuxt-i18n`'s [localePath()](https://i18n.nuxtjs.org/basic-usage/#nuxt-link)
+For example
+```vue
+<nuxt-link :to="'/app/profile'.tl()">Profile</nuxt-link>
+// equal to
+<nuxt-link :to="localePath('/app/profile')">Profile</nuxt-link>
+```
 ## License
 
 [MIT License](./LICENSE)
