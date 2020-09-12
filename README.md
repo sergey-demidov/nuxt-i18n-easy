@@ -2,7 +2,6 @@
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
@@ -78,7 +77,7 @@ mkdir lang
 touch lang/en.js
 touch lang/ru.js
 ```
-#### 5. [Buy me a coffee :coffee:]https://www.paypal.com/paypalme/sergeydemidov
+#### 5. [Buy me a coffee :coffee:](https://www.paypal.com/paypalme/sergeydemidov)
 ___
 
 ## Usage
