@@ -33,7 +33,7 @@ const config = {
   try {
     nuxtConfig = require(path.join(process.cwd(), 'nuxt.config.js')).default
   } catch (e) {
-    consola.error(`No \x1B[36mnuxt.config.js\x1B[0m file detected. \n${inc.URL}`)
+    consola.error(`No \x1B[36mnuxt.config.js\x1B[0m file detected. \n We are definitely in the \x1B[36mNUXT\x1B[0m project directory?\n${inc.URL}`)
     return
   }
   let i18n = {}
@@ -95,7 +95,10 @@ const config = {
         for (const reg of regexp) {
           const matches = lines.matchAll(reg)
           for (const match of matches) {
-            phrases.push(match[1])
+            const sanitized = match[1].replace(/&#(\d+);/g, (match, dec) => {
+              return String.fromCharCode(dec)
+            })
+            phrases.push(sanitized)
           }
         }
       }
