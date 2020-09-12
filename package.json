@@ -1,6 +1,6 @@
 {
   "name": "nuxt-i18n-easy",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Automatic multilingual translator for nuxt-i18n",
   "main": "lib/module.js",
   "scripts": {
@@ -35,12 +35,12 @@
     "@nuxtjs/eslint-module": "^2.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.5.0",
-    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-nuxt": "^1.0.0"
   },
   "dependencies": {
     "consola": "^2.15.0",
     "esm": "^3.2.25",
-    "minimatch": "^3.0.4"
+    "minimatch": "^3.0.4",
     "axios": "^0.20.0",
     "lodash": "^4.17.20",
     "nuxt-i18n": "^6.15.1"
