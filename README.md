@@ -17,7 +17,7 @@ The I18n is great. But what about translating an existing project with hundreds 
 
 ## Feautures
 
-- Based on [nuxt-i18n](https://github.com/nuxt-community/i18n-module)'s  [lazy-load translations](https://i18n.nuxtjs.org/lazy-load-translations))
+- Based on [nuxt-i18n](https://github.com/nuxt-community/i18n-module)'s  [lazy-load translations](https://i18n.nuxtjs.org/lazy-load-translations)
 - Uses _existing_ strings as object properties
 - _Recursively_ scans the source code directories in the project
 - Finds the strings that need translation
