@@ -40,7 +40,7 @@ const config = {
       }
     }
   }
-  console.dir(i18n)
+  // console.dir(i18n)
   if (_.isEmpty(i18n)) {
     consola.error(`No \x1B[36mi18n\x1B[0m config detected.\n${inc.example}\n${inc.URL}`)
     return
