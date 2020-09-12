@@ -14,7 +14,6 @@ const axios = require('axios')
 const _ = require('lodash')
 const inc = require('../lib/includes')
 
-const nuxtConfig = require(path.join(process.cwd(), 'nuxt.config.js')).default
 const lang = process.argv[2] || ''
 
 const config = {
@@ -30,6 +29,13 @@ const config = {
 };
 
 (async () => {
+  let nuxtConfig
+  try {
+    nuxtConfig = require(path.join(process.cwd(), 'nuxt.config.js')).default
+  } catch (e) {
+    consola.error(`No \x1B[36mnuxt.config.js\x1B[0m file detected. \n${inc.URL}`)
+    return
+  }
   let i18n = {}
   if (nuxtConfig.i18n instanceof Object) {
     i18n = nuxtConfig.i18n
