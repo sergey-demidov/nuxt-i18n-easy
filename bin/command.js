@@ -169,10 +169,14 @@ const config = {
           const res = await axios.get('http://translate.googleapis.com/translate_a/single?' + requestString, {
             headers: { Accept: '*/*' }
           })
-          // console.dir(res.data, { depth: 10 })
+          // if (process.env.DEBUG === 'true') { console.dir(res.data, { depth: 10 }) }
           let translation = ''
           if (res.data[0] && res.data[0][0]) {
-            translation = res.data[0][0][0] || ''
+            for (const ph of res.data[0]) {
+              if (ph[0] !== null) { translation += ph[0] }
+              // eslint-disable-next-line no-console
+              if (process.env.DEBUG === 'true') { console.dir(ph[0], { depth: 10 }) }
+            }
           }
           if (res.data[1] && res.data[1][0]) {
             opts[key] = res.data[1][0][1] || ''
