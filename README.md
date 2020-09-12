@@ -42,7 +42,7 @@ npm install nuxt-i18n-easy # or yarn add nuxt-i18n-easy
   ]
 }
 ```
-#### 3. Add `i18n` & `i18nTranslate` to the `root` of `nuxt.config.js`
+#### 3. Add `i18n` & `i18nEasy` to the `root` of `nuxt.config.js`
 ```js
 export default {
   i18n: {
@@ -61,7 +61,7 @@ export default {
     lazy: true,
     langDir: 'lang/',
   },
-  i18nTranslate: {
+  i18nEasy: {
     directories: [             // default directories for search
       './layouts',
       './pages',
