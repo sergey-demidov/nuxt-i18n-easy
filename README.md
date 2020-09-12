@@ -203,6 +203,7 @@ The `v-tr` directive does __not__ support nested tags
 ## If you really read up to here
 
 There, under the hood is one more feature. You may use `String.lp()` as shortcut to `nuxt-i18n`'s [localePath()](https://i18n.nuxtjs.org/basic-usage/#nuxt-link)
+
 For example
 ```vue
 <nuxt-link :to="'/app/profile'.tl()">Profile</nuxt-link>
