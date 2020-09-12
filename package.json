@@ -1,7 +1,7 @@
 {
   "name": "nuxt-i18n-easy",
   "version": "1.0.2",
-  "description": "Automatic multilingual easy for nuxt-i18n",
+  "description": "Automatic multilingual translator for nuxt-i18n",
   "main": "lib/module.js",
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
@@ -12,7 +12,7 @@
     "test"
   ],
   "bin": {
-    "tr": "./bin/command.js"
+    "translate": "./bin/command.js"
   },
   "repository": {
     "type": "git",

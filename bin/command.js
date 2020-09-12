@@ -130,7 +130,7 @@ const config = {
         return
       }
       if (phrases.length === 0) {
-        consola.warn(`No words or phrases found for translation.\n${inc.URL} `)
+        consola.warn(inc.phrasesWarn + inc.URL)
         return
       }
       const exist = Object.keys(translations)
@@ -203,7 +203,7 @@ const config = {
           lines.push(line)
         })
         const out = `${endOfLine}export default {${endOfLine}` +
-                lines.join(endOfLine) + `${endOfLine}}${endOfLine}`
+                        lines.join(endOfLine) + `${endOfLine}}${endOfLine}`
         if (fs.statSync(langFile).size > 0) {
           fs.copyFileSync(langFile, langFile + '.' + new Date().toISOString().slice(0, 16).replace(/[T:]/g, '-'))
         }
