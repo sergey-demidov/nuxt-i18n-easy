@@ -151,54 +151,9 @@ const config = {
       }
 
       for (const key of diffs) {
-        if (translationCode === config.sourceLanguage) {
-          consola.info(`Skip translation from \x1B[36m${config.sourceLanguage}\x1B[0m to \x1B[36m${translationCode}\x1B[0m`)
-          translations[key] = key
-        } else {
-          const requestString = querystring.stringify({
-            client: 'gtx',
-            ie: 'UTF-8',
-            oe: 'UTF-8',
-            dt: ['t', 'at', 'bd'],
-            // dt: ['bd', 'ex', 'ld', 'md', 'rw', 'rm', 'ss', 't', 'at', 'gt', 'qca'],
-            hl: 'en',
-            sl: config.sourceLanguage,
-            tl: translationCode,
-            q: key
-          })
-          const res = await axios.get('http://translate.googleapis.com/translate_a/single?' + requestString, {
-            headers: { Accept: '*/*' }
-          })
-          // if (process.env.DEBUG === 'true') { console.dir(res.data, { depth: 10 }) }
-          let translation = ''
-          if (res.data[0] && res.data[0][0]) {
-            for (const ph of res.data[0]) {
-              if (ph[0] !== null) { translation += ph[0] }
-              // eslint-disable-next-line no-console
-              if (process.env.DEBUG === 'true') { console.dir(ph[0], { depth: 10 }) }
-            }
-          }
-          if (res.data[1] && res.data[1][0]) {
-            opts[key] = res.data[1][0][1] || ''
-            // console.dir(opts)
-          }
-          if (translation.length > 0) {
-            const startSpace = key.match(/^(\s+)/)
-            if (startSpace) {
-              translation += startSpace[1]
-            }
-            const endSpace = key.match(/(\s+)$/)
-            if (endSpace) {
-              translation = endSpace[1] + translation
-            }
-            translations[key] = translation
-            consola.success(`'${key}' => '${translation}'`)
-          } else {
-            consola.error('\x1B[31mTranslation error, dump below \x1B[0m')
-            // eslint-disable-next-line no-console
-            console.dir(res.data, { depth: 10 })
-          }
-        }
+        const res = await inc.translate(config.sourceLanguage, translationCode, key)
+        translations[key] = res.translated
+        opts[key] = res.opts
         const lines = []
         Object.keys(translations).forEach((k, i) => {
           let line = '  '
