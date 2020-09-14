@@ -32,7 +32,7 @@ let config = {
   await lib.checkFiles(config)
   const phrases = lib.getSentences(config.directories, config.fileMask)
   for (const locale of config.locales) {
-    consola.warn(process.pid)
+    // consola.warn(process.pid)
     let translationCode = locale.code
     if (typeof locale.translationCode === 'string') {
       translationCode = locale.translationCode

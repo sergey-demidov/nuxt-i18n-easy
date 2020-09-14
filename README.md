@@ -8,7 +8,6 @@
 
 > Automatic multilingual translator for nuxt-i18n
 
-[📖 **Release Notes**](./CHANGELOG.md)
 ## Introduction
 
 #### The I18n is great. 
