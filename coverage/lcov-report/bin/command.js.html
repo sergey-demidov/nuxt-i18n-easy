@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/62</span>
+                <span class='fraction'>0/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/28</span>
+                <span class='fraction'>0/26</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/60</span>
+                <span class='fraction'>0/58</span>
             </div>
         
             
@@ -152,16 +152,7 @@
 <a name='L93'></a><a href='#L93'>93</a>
 <a name='L94'></a><a href='#L94'>94</a>
 <a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a>
-<a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L96'></a><a href='#L96'>96</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -189,12 +180,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -213,15 +200,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -237,6 +215,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -256,12 +237,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -293,14 +275,10 @@ let config = <span class="cstat-no" title="statement not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
   const nuxtConfig = <span class="cstat-no" title="statement not covered" >lib.importFile('nuxt.config.js')</span>
 <span class="cstat-no" title="statement not covered" >  config = lib.getConfig(nuxtConfig, config)</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!fs.existsSync(config.langDir)) {</span>
-<span class="cstat-no" title="statement not covered" >    consola.error(lib.directoryWarn(config.langDir))</span>
-<span class="cstat-no" title="statement not covered" >    return</span>
-  }
-&nbsp;
+<span class="cstat-no" title="statement not covered" >  await lib.checkFiles(config)</span>
   const phrases = <span class="cstat-no" title="statement not covered" >lib.getSentences(config.directories, config.fileMask)</span>
 <span class="cstat-no" title="statement not covered" >  for (const locale of config.locales) {</span>
+<span class="cstat-no" title="statement not covered" >    consola.warn(process.pid)</span>
     let translationCode = <span class="cstat-no" title="statement not covered" >locale.code</span>
 <span class="cstat-no" title="statement not covered" >    if (typeof locale.translationCode === 'string') {</span>
 <span class="cstat-no" title="statement not covered" >      translationCode = locale.translationCode</span>
@@ -312,60 +290,55 @@ let config = <span class="cstat-no" title="statement not covered" >{</span>
     // const langFile = path.join(process.cwd(), config.langDir, locale.file)
     const langFile = <span class="cstat-no" title="statement not covered" >path.join(config.langDir, locale.file)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      const opts = <span class="cstat-no" title="statement not covered" >{}</span>
-      let translations = <span class="cstat-no" title="statement not covered" >{}</span>
-<span class="cstat-no" title="statement not covered" >      if (fs.existsSync(langFile)) {</span>
-<span class="cstat-no" title="statement not covered" >        translations = lib.importFile(langFile) || {}</span>
-        // console.dir(translations)
-      } else {
-<span class="cstat-no" title="statement not covered" >        consola.error(`File ${langFile} does not exist`)</span>
-<span class="cstat-no" title="statement not covered" >        consola.info(`Tip: You may need to run\n\n</span>
-                \x1B[36m touch ${langFile} \x1B[0m\n\n`)
-<span class="cstat-no" title="statement not covered" >        return</span>
-      }
-<span class="cstat-no" title="statement not covered" >      if (phrases.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >        consola.warn(lib.phrasesWarn + lib.URL)</span>
-<span class="cstat-no" title="statement not covered" >        return</span>
-      }
-      const exist = <span class="cstat-no" title="statement not covered" >Object.keys(translations)</span>
-      const unused = <span class="cstat-no" title="statement not covered" >exist.filter(<span class="fstat-no" title="function not covered" >x </span>=&gt; <span class="cstat-no" title="statement not covered" >!phrases.includes(x))</span></span>
-      const diffs = <span class="cstat-no" title="statement not covered" >phrases.filter(<span class="fstat-no" title="function not covered" >x </span>=&gt; <span class="cstat-no" title="statement not covered" >!exist.includes(x))</span></span>
-<span class="cstat-no" title="statement not covered" >      if (diffs.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >        consola.info(`\x1B[36m${langFile}\x1B[0m up to date`)</span>
-<span class="cstat-no" title="statement not covered" >        continue</span>
-      }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      for (const key of diffs) {</span>
-        const res = <span class="cstat-no" title="statement not covered" >await lib.translate(config.sourceLanguage, translationCode, key)</span>
-<span class="cstat-no" title="statement not covered" >        translations[key] = res.translated</span>
-<span class="cstat-no" title="statement not covered" >        opts[key] = res.opts</span>
-        const lines = <span class="cstat-no" title="statement not covered" >[]</span>
-<span class="cstat-no" title="statement not covered" >        Object.keys(translations).forEach(<span class="fstat-no" title="function not covered" >(k</span>, i) =&gt; {</span>
-          let line = <span class="cstat-no" title="statement not covered" >'  '</span>
-<span class="cstat-no" title="statement not covered" >          line += k.match(/^[a-zA-Z_][a-zA-Z_\d]+$/) ? k : `'${k}'`</span>
-<span class="cstat-no" title="statement not covered" >          line += `: '${translations[k]}'`</span>
-<span class="cstat-no" title="statement not covered" >          if (i !== Object.keys(translations).length - 1) {</span>
-<span class="cstat-no" title="statement not covered" >            line += ','</span>
-          }
-<span class="cstat-no" title="statement not covered" >          if (Object.keys(opts).includes(k)) {</span>
-<span class="cstat-no" title="statement not covered" >            line += ` // ${opts[k].join(', ')}`</span>
-          }
-<span class="cstat-no" title="statement not covered" >          if (unused.includes(k)) {</span>
-<span class="cstat-no" title="statement not covered" >            line += ' // unused'</span>
-          }
-<span class="cstat-no" title="statement not covered" >          lines.push(line)</span>
-        })
-        const out = <span class="cstat-no" title="statement not covered" >`${endOfLine}export default {${endOfLine}` +</span>
-                        lines.join(endOfLine) + `${endOfLine}}${endOfLine}`
-<span class="cstat-no" title="statement not covered" >        if (fs.statSync(langFile).size &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >          fs.copyFileSync(langFile, langFile + '.' + new Date().toISOString().slice(0, 16).replace(/[T:]/g, '-'))</span>
-        }
-<span class="cstat-no" title="statement not covered" >        fs.writeFileSync(langFile, out)</span>
-      }
-    } catch (e) {
-<span class="cstat-no" title="statement not covered" >      consola.error(e)</span>
+    const opts = <span class="cstat-no" title="statement not covered" >{}</span>
+    let translations = <span class="cstat-no" title="statement not covered" >{}</span>
+<span class="cstat-no" title="statement not covered" >    translations = lib.importFile(langFile) || {}</span>
+<span class="cstat-no" title="statement not covered" >    if (phrases.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >      consola.warn(lib.phrasesWarn + lib.URL)</span>
+<span class="cstat-no" title="statement not covered" >      return</span>
     }
+    const exist = <span class="cstat-no" title="statement not covered" >Object.keys(translations)</span>
+    const unused = <span class="cstat-no" title="statement not covered" >exist.filter(<span class="fstat-no" title="function not covered" >x </span>=&gt; <span class="cstat-no" title="statement not covered" >!phrases.includes(x))</span></span>
+    const diffs = <span class="cstat-no" title="statement not covered" >phrases.filter(<span class="fstat-no" title="function not covered" >x </span>=&gt; <span class="cstat-no" title="statement not covered" >!exist.includes(x))</span></span>
+<span class="cstat-no" title="statement not covered" >    if (diffs.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >      consola.info(`\x1B[36m${langFile}\x1B[0m up to date`)</span>
+<span class="cstat-no" title="statement not covered" >      continue</span>
+    }
+&nbsp;
+    const lines = <span class="cstat-no" title="statement not covered" >[]</span>
+<span class="cstat-no" title="statement not covered" >    for (const key of diffs) {</span>
+      const res = <span class="cstat-no" title="statement not covered" >await lib.translate(config.sourceLanguage, translationCode, key)</span>
+<span class="cstat-no" title="statement not covered" >      translations[key] = res.translated</span>
+<span class="cstat-no" title="statement not covered" >      if (res.opts.length) {</span>
+<span class="cstat-no" title="statement not covered" >        opts[key] = res.opts</span>
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    Object.keys(translations).forEach(<span class="fstat-no" title="function not covered" >(k</span>, i) =&gt; {</span>
+      let line = <span class="cstat-no" title="statement not covered" >'  '</span>
+<span class="cstat-no" title="statement not covered" >      line += k.match(/^[a-zA-Z_][a-zA-Z_\d]+$/) ? k : `'${k}'`</span>
+<span class="cstat-no" title="statement not covered" >      line += `: '${translations[k]}'`</span>
+<span class="cstat-no" title="statement not covered" >      if (i !== Object.keys(translations).length - 1) {</span>
+<span class="cstat-no" title="statement not covered" >        line += ','</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (Object.keys(opts).includes(k)) {</span>
+<span class="cstat-no" title="statement not covered" >        line += ` // ${opts[k].join(', ')}`</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (unused.includes(k)) {</span>
+<span class="cstat-no" title="statement not covered" >        line += ' // unused'</span>
+      }
+<span class="cstat-no" title="statement not covered" >      lines.push(line)</span>
+    })
+    const out = <span class="cstat-no" title="statement not covered" >`${endOfLine}export default {${endOfLine}` +</span>
+                        lines.join(endOfLine) + `${endOfLine}}${endOfLine}`
+<span class="cstat-no" title="statement not covered" >    if (fs.statSync(langFile).size &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      fs.copyFileSync(langFile, langFile + '.' + new Date().toISOString().slice(0, 16).replace(/[T:]/g, '-'))</span>
+<span class="cstat-no" title="statement not covered" >      console.log('Copy')</span>
+<span class="cstat-no" title="statement not covered" >      console.dir(lines)</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      console.log('Create')</span>
+<span class="cstat-no" title="statement not covered" >      console.dir(lines)</span>
+    }
+<span class="cstat-no" title="statement not covered" >    fs.writeFileSync(langFile, out)</span>
   }
 }
 )()
@@ -376,7 +349,7 @@ let config = <span class="cstat-no" title="statement not covered" >{</span>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Sep 14 2020 00:06:52 GMT+0300 (Moscow Standard Time)
+                at Mon Sep 14 2020 15:36:56 GMT+0300 (Moscow Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
