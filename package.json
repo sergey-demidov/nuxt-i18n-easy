@@ -1,12 +1,13 @@
 {
   "name": "nuxt-i18n-easy",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "Automatic multilingual translator for nuxt-i18n",
   "main": "lib/module.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --silent",
+    "dev": "nuxt example",
     "lint": "eslint --ext .js,.vue .",
-    "release": "standard-version && git push --follow-tags origin master && npm publish"
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
+    "test": "yarn lint && jest"
   },
   "files": [
     "lib",
@@ -14,13 +15,6 @@
   ],
   "bin": {
     "translate": "./bin/command.js"
-  },
-  "main": "lib/module.js",
-  "scripts": {
-    "dev": "nuxt example",
-    "lint": "eslint --ext .js,.vue .",
-    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
-    "test": "yarn lint && jest"
   },
   "dependencies": {
     "axios": "^0.20.0",
