@@ -206,7 +206,7 @@ There, under the hood is one more feature. You may use `String.lp()` as shortcut
 
 For example
 ```vue
-<nuxt-link :to="'/app/profile'.tl()">Profile</nuxt-link>
+<nuxt-link :to="'/app/profile'.lp()">Profile</nuxt-link>
 // equal to
 <nuxt-link :to="localePath('/app/profile')">Profile</nuxt-link>
 ```

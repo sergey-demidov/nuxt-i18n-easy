@@ -4,7 +4,7 @@
   "description": "Automatic multilingual translator for nuxt-i18n",
   "main": "lib/module.js",
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "lint": "eslint --ext .js,.vue .",
     "release": "standard-version && git push --follow-tags origin master && npm publish"
   },
@@ -22,7 +22,11 @@
   "keywords": [
     "nuxt",
     "i18n",
-    "easy"
+    "easy",
+    "translate",
+    "cli",
+    "node",
+    "nodejs"
   ],
   "author": "Sergey Demidov <sergey.k.demidov@gmail.com>",
   "license": "MIT",
@@ -33,16 +37,18 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
-    "babel-eslint": "^10.1.0",
     "eslint": "^7.5.0",
-    "eslint-plugin-nuxt": "^1.0.0"
+    "eslint-plugin-nuxt": "^1.0.0",
+    "jest": "^26.4.2"
   },
   "dependencies": {
-    "consola": "^2.15.0",
-    "esm": "^3.2.25",
-    "minimatch": "^3.0.4",
     "axios": "^0.20.0",
+    "consola": "^2.15.0",
+    "emojis-list": "^3.0.0",
+    "esm": "^3.2.25",
+    "inquirer": "^7.3.3",
     "lodash": "^4.17.20",
+    "minimatch": "^3.0.4",
     "nuxt-i18n": "^6.15.1"
   }
 }
