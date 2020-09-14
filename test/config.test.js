@@ -1,6 +1,10 @@
+// const { setup, loadConfig, get } = require('@nuxtjs/module-test-utils')
+const { loadConfig } = require('@nuxtjs/module-test-utils')
 const lib = require('../lib/includes')
 
 it('parse config', () => {
+  const conf0 = loadConfig(__dirname, '../../example')
+  console.dir(conf0)
   const conf = {
     i18n: {
       locales: [

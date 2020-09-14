@@ -1,12 +1,13 @@
 {
   "name": "nuxt-i18n-easy",
-  "version": "1.1.10",
+  "version": "1.1.13",
   "description": "Automatic multilingual translator for nuxt-i18n",
   "main": "lib/module.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --silent",
+    "dev": "nuxt example",
     "lint": "eslint --ext .js,.vue .",
-    "release": "standard-version && git push --follow-tags origin master && npm publish"
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
+    "test": "yarn lint && jest"
   },
   "files": [
     "lib",
@@ -15,9 +16,13 @@
   "bin": {
     "translate": "./bin/command.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sergey-demidov/nuxt-i18n-easy.git"
+  "dependencies": {
+    "axios": "^0.20.0",
+    "consola": "^2.15.0",
+    "esm": "^3.2.25",
+    "inquirer": "^7.3.3",
+    "minimatch": "^3.0.4",
+    "nuxt-i18n": "^6.15.1"
   },
   "keywords": [
     "nuxt",
@@ -28,27 +33,23 @@
     "node",
     "nodejs"
   ],
-  "author": "Sergey Demidov <sergey.k.demidov@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sergey-demidov/nuxt-i18n-easy/issues"
-  },
-  "homepage": "https://github.com/sergey-demidov/nuxt-i18n-easy#readme",
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^3.1.0",
-    "@nuxtjs/eslint-module": "^2.0.0",
-    "eslint": "^7.5.0",
-    "eslint-plugin-nuxt": "^1.0.0",
-    "jest": "^26.4.2"
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@nuxtjs/eslint-config": "latest",
+    "@nuxtjs/module-test-utils": "latest",
+    "babel-eslint": "latest",
+    "babel-jest": "latest",
+    "codecov": "^3.7.2",
+    "eslint": "latest",
+    "husky": "latest",
+    "jest": "latest",
+    "nuxt-edge": "latest",
+    "standard-version": "latest"
   },
-  "dependencies": {
-    "axios": "^0.20.0",
-    "consola": "^2.15.0",
-    "emojis-list": "^3.0.0",
-    "esm": "^3.2.25",
-    "inquirer": "^7.3.3",
-    "lodash": "^4.17.20",
-    "minimatch": "^3.0.4",
-    "nuxt-i18n": "^6.15.1"
+  "publishConfig": {
+    "access": "public"
   }
 }

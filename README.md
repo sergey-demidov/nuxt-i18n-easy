@@ -2,10 +2,11 @@
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> Automated multilingual text translator for NUXT
+> Automatic multilingual translator for nuxt-i18n
 
 ## Introduction
 
@@ -210,6 +211,7 @@ For example
 // equal to
 <nuxt-link :to="localePath('/app/profile')">Profile</nuxt-link>
 ```
+
 ## License
 
 [MIT License](./LICENSE)
