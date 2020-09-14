@@ -1,10 +1,10 @@
 {
   "name": "nuxt-i18n-easy",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Automatic multilingual translator for nuxt-i18n",
   "main": "lib/module.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --silent",
     "lint": "eslint --ext .js,.vue .",
     "release": "standard-version && git push --follow-tags origin master && npm publish"
   },
