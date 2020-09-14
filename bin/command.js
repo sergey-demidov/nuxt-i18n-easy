@@ -26,6 +26,9 @@ let config = {
 (async () => {
   const nuxtConfig = lib.importFile('nuxt.config.js')
   config = lib.getConfig(nuxtConfig, config)
+  if (!(config instanceof Object)) {
+    process.exit(1)
+  }
   await lib.checkFiles(config)
   const phrases = lib.getSentences(config.directories, config.fileMask)
   for (const locale of config.locales) {
@@ -83,11 +86,6 @@ let config = {
                         lines.join(endOfLine) + `${endOfLine}}${endOfLine}`
     if (fs.statSync(langFile).size > 0) {
       fs.copyFileSync(langFile, langFile + '.' + new Date().toISOString().slice(0, 16).replace(/[T:]/g, '-'))
-      console.log('Copy')
-      console.dir(lines)
-    } else {
-      console.log('Create')
-      console.dir(lines)
     }
     fs.writeFileSync(langFile, out)
   }

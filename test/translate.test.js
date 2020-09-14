@@ -1,6 +1,15 @@
 const axios = require('axios')
 const lib = require('../lib/includes')
 // const jest = require('jest')
+const log = console.log
+
+beforeAll(() => {
+  console.log = () => {}
+})
+
+afterAll(() => {
+  console.log = log
+})
 
 jest.mock('axios')
 

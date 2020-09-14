@@ -1,16 +1,16 @@
 {
   "name": "nuxt-i18n-easy",
-  "version": "1.1.3",
+  "version": "1.1.10",
   "description": "Automatic multilingual translator for nuxt-i18n",
-  "repository": "sergey-demidov/nuxt-i18n-easy",
-  "license": "MIT",
-  "contributors": [
-    {
-      "name": "Sergey Demidov <sergey.k.demidov@gmail.com>"
-    }
-  ],
+  "main": "lib/module.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --silent",
+    "lint": "eslint --ext .js,.vue .",
+    "release": "standard-version && git push --follow-tags origin master && npm publish"
+  },
   "files": [
-    "lib"
+    "lib",
+    "bin"
   ],
   "bin": {
     "translate": "./bin/command.js"
