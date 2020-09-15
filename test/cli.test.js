@@ -27,7 +27,7 @@ describe('files not exist', () => {
     //     backup.prompt = inquirer.prompt
     //     // inquirer.prompt.prompts.confirm = () => Promise.resolve(() => { return Math.random() < 0.5 ? { dir: true } : { dir: false } })
     //     // inquirer.prompt. = () => { return Math.random() < 0.5 ? { dir: true } : { dir: false } }
-    //     // inquirer.prompt.prompts.confirm = () => Promise.resolve({ dir: true })
+    inquirer.prompt.prompts.confirm = () => Promise.resolve(true)
     //     console.dir(inquirer.prompt.prompts.confirm)
     //     backup.mkdirSync = fs.mkdirSync
     //     fs.mkdirSync = () => {}
@@ -38,12 +38,12 @@ describe('files not exist', () => {
     // fs.existsSync = () => { return Math.random() < 0.5 }
   })
 
-  test('should equal test', () => {
+  it('should equal test', async () => {
     inquirer.prompt.prompts.confirm = () => { return Math.random() < 0.5 }
     // expect.assertions(1);
     for (let i = 0; i < 10; i++) {
-      expect(lib.checkFiles({ langDir: 'test/mocks/XXX/', locales: [{ file: 'en.js' }] })).toBeTruthy()
-      expect(lib.checkFiles({ langDir: 'test/mocks/lang/', locales: [{ file: 'ru.js' }] })).toBeTruthy()
+      await expect(lib.checkFiles({ langDir: 'test/mocks/XXX/', locales: [{ file: 'en.js' }] })).toBeTruthy()
+      await expect(lib.checkFiles({ langDir: 'test/mocks/lang/', locales: [{ file: 'ru.js' }] })).toBeTruthy()
     }
   })
   //
