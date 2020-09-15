@@ -3,6 +3,7 @@ const lib = require('../lib/includes')
 test('search for sentences', () => {
   expect(lib.getSentences).toBeDefined()
   expect(lib.getSentences(['./test/mocks/pages'], ['*.vue'])).toContain('“I will be translated”')
+  expect(lib.getSentences(['./test/mocks/pages'], '*.vue')).toContain('“I will be translated”')
   expect(lib.getSentences(['./test/mocks/ERROR'], ['*.js'])).toEqual([])
   expect(lib.getSentences(['./test/mocks/pages'], {})).toEqual([])
 })
