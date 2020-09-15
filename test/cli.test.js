@@ -41,7 +41,7 @@ describe('files not exist', () => {
     // expect.assertions(1);
     for (let i = 0; i < 10; i++) {
       await expect(lib.checkFiles({ langDir: 'test/mocks/XXX/', locales: [{ file: 'en.js' }] })).toBeTruthy()
-      // await expect(lib.checkFiles({ langDir: 'test/mocks/lang/', locales: [{ file: 'ru.js' }] })).toBeTruthy()
+      await expect(lib.checkFiles({ langDir: 'test/mocks/lang/', locales: [{ file: 'ru.js' }] })).toBeTruthy()
     }
   })
 

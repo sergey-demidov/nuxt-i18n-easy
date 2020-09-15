@@ -15,12 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-<<<<<<< HEAD
         node: [10, 12]
-=======
-        node: [8, 10, 12]
->>>>>>> dev
-
     steps:
       - uses: actions/setup-node@v1
         with:
