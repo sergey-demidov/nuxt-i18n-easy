@@ -1,8 +1,8 @@
 const consola = require('consola')
 const lib = require('../lib/includes')
 
-jest.spyOn(global.console, 'log').mockImplementation(() => jest.fn())
-jest.spyOn(global.console, 'error').mockImplementation(() => jest.fn())
+// jest.spyOn(global.console, 'log').mockImplementation(() => jest.fn())
+// jest.spyOn(global.console, 'error').mockImplementation(() => jest.fn())
 
 describe('test user input', () => {
   // const backup = {}

@@ -10,7 +10,8 @@ export default {
       {
         code: 'ru',
         name: 'Русский',
-        file: 'ru.js'
+        file: 'ru.js',
+        translationCode: 'ru'
       }
     ],
     lazy: true,

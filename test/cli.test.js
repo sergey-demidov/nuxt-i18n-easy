@@ -1,4 +1,5 @@
 const fs = require('fs')
+const endOfLine = require('os').EOL
 const stdin = require('mock-stdin').stdin()
 const consola = require('consola')
 const lib = require('../lib/includes')
@@ -11,14 +12,24 @@ describe('test user input', () => {
   beforeAll(() => {
     backup.mkdirSync = fs.mkdirSync
     backup.writeFileSync = fs.writeFileSync
+    backup.copyFileSync = fs.copyFileSync
     fs.mkdirSync = () => {}
     fs.writeFileSync = () => {}
+    fs.copyFileSync = () => {}
     for (const key in consola) {
       if (typeof consola[key] === 'function') {
         consola[key] = () => {}
       }
     }
   })
+
+  it('write out', async () => {
+    expect(await
+    lib.writeConfig({ langFile: 'lang/en.js' },
+      { Welcome: { translated: 'Welcome', lineNumber: 123, unused: false, opts: ['Welcome!'] } }).split(endOfLine))
+      .toContain('  Welcome: \'Welcome\' // 123 Welcome! ')
+  })
+
   it('directory dos not exist', async () => {
     for (const c of 'yn') {
       setTimeout(spit, 100, c + '\n')
@@ -37,6 +48,7 @@ describe('test user input', () => {
   afterAll(() => {
     fs.writeFileSync = backup.writeFileSync
     fs.mkdirSync = backup.mkdirSync
+    fs.copyFileSync = backup.copyFileSync
     stdin.end()
   })
 })
