@@ -46,6 +46,7 @@
     "eslint": "latest",
     "husky": "latest",
     "jest": "latest",
+    "mock-stdin": "^1.0.0",
     "standard-version": "latest"
   },
   "publishConfig": {
