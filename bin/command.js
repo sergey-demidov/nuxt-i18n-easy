@@ -25,23 +25,18 @@ let config = {
 (async () => {
   const nuxtConfig = lib.importFile('nuxt.config.js')
   config = lib.getConfig(nuxtConfig, config)
-  if (!(config instanceof Object)) {
-    return
-  }
+  if (!(config instanceof Object)) { return }
   if (!(await lib.checkFiles(config))) { return }
   const phrases = lib.getSentences(config.directories, config.fileMask)
   if (phrases.length === 0) {
     consola.warn(`${lib.phrasesWarn}\n${lib.URL}`)
     return
   }
-
   for (const locale of config.locales) {
     if (config.lang.length && config.lang !== locale.translationCode) {
       consola.info(`Translation from \x1B[36m${config.sourceLanguage}\x1B[0m to \x1B[36m${locale.translationCode}\x1B[0m will not be executed because the command line was specified filter \x1B[36m${config.lang}\x1B[0m`)
       continue
     }
-
-    // const opts = {}
     const result = await lib.processSentences(phrases, config.sourceLanguage, locale)
     if (result) { lib.writeConfig(locale, result) }
   }

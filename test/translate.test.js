@@ -1,9 +1,11 @@
+// const fs = require('fs')
 const axios = require('axios')
 const consola = require('consola')
 const lib = require('../lib/includes')
 // const jest = require('jest')
 
 jest.mock('axios')
+// jest.mock('fs')
 
 describe('test user input', () => {
   // const backup = {}
@@ -15,8 +17,25 @@ describe('test user input', () => {
     }
   })
 
+  // lib.processSentences = async (phrases, sourceLanguage, locale) => {
+
+  it('processSentences', async () => {
+    // fs.readFileSync.mockResolvedValue({ })
+    const res = [
+      [['Продолжать', 'Continue', null, null, 1]],
+      [['verb', ['продолжаться']]]]
+    axios.get.mockResolvedValue({ data: res })
+    expect((await lib.processSentences(['Continue'], 'en', { langFile: 'test/mocks/lang/en.js' })))
+      .toMatchObject({ Continue: { opts: 'продолжаться', translated: 'Продолжать', unused: false } })
+  })
+
   it('translate same lang en => en', async () => {
-    await expect((await lib.translate('en', 'en', 'Hello World')))
+    expect((await lib.translate('en', 'en', 'Hello World')))
+      .toMatchObject({ translated: 'Hello World', opts: [] })
+  })
+
+  it('translate same lang en => en', async () => {
+    expect((await lib.translate('en', 'en', 'Hello World')))
       .toMatchObject({ translated: 'Hello World', opts: [] })
   })
 

@@ -25,9 +25,12 @@ describe('test user input', () => {
 
   it('write out', async () => {
     expect(await
-    lib.writeConfig({ langFile: 'lang/en.js' },
-      { Welcome: { translated: 'Welcome', lineNumber: 123, unused: false, opts: ['Welcome!'] } }).split(endOfLine))
-      .toContain('  Welcome: \'Welcome\' // 123 Welcome! ')
+    lib.writeConfig({ langFile: 'test/mocks/lang/en.js' },
+      {
+        Welcome: { translated: 'Welcome', lineNumber: 123, unused: false, opts: ['Welcome!'] },
+        Inspire: { translated: 'Inspire', lineNumber: 234, unused: true, opts: [] }
+      }).split(endOfLine))
+      .toContain('  Welcome: \'Welcome\', // Welcome! ')
   })
 
   it('directory dos not exist', async () => {
