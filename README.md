@@ -231,5 +231,5 @@ Copyright (c) Sergey Demidov <sergey.k.demidov@gmail.com>
 [codecov-src]: https://img.shields.io/codecov/c/github/sergey-demidov/nuxt-i18n-easy.svg
 [codecov-href]: https://codecov.io/gh/sergey-demidov/nuxt-i18n-easy
 
-[license-src]: https://img.shields.io/npm/l/nuxt-i18n-easy.svg
+[license-src]: https://img.shields.io/github/license/sergey-demidov/nuxt-i18n-easy
 [license-href]: https://npmjs.com/package/nuxt-i18n-easy
