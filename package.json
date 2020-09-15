@@ -50,5 +50,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergey-demidov/nuxt-i18n-easy.git"
   }
 }
