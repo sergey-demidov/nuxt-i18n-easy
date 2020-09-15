@@ -46,10 +46,15 @@
     "eslint": "latest",
     "husky": "latest",
     "jest": "latest",
+<<<<<<< HEAD
     "mock-inquirer": "^1.0.3",
     "nuxt-edge": "latest",
     "standard-version": "latest",
     "test-console": "^1.1.0"
+=======
+    "nuxt-edge": "latest",
+    "standard-version": "latest"
+>>>>>>> dev
   },
   "publishConfig": {
     "access": "public"

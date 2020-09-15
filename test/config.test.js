@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import conf from './mocks/nuxt.config.js'
 const lib = require('../lib/includes')
 
@@ -7,6 +8,37 @@ const clone = (o) => {
 let nuxtConfig = clone(conf)
 
 it('parse nuxtConfig', () => {
+=======
+// const { setup, loadConfig, get } = require('@nuxtjs/module-test-utils')
+const { loadConfig } = require('@nuxtjs/module-test-utils')
+const lib = require('../lib/includes')
+
+it('parse config', () => {
+  const conf0 = loadConfig(__dirname, '../../example')
+  console.dir(conf0)
+  const conf = {
+    i18n: {
+      locales: [
+        {
+          code: 'en',
+          name: 'English',
+          file: 'en.js'
+        }
+      ],
+      lazy: true,
+      langDir: 'lang/'
+    },
+    i18nEasy: {
+      directories: [
+        './layouts',
+        './pages',
+        './components'
+      ],
+      files: ['*.vue', '*.js'],
+      sourceLanguage: 'en'
+    }
+  }
+>>>>>>> dev
   expect(lib.getConfig).toBeDefined()
   expect(lib.getConfig(nuxtConfig, { locales: [] })).toHaveProperty('langDir', 'lang/')
   expect(lib.getConfig(nuxtConfig, { locales: [] })).toHaveProperty('locales')

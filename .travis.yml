@@ -20,3 +20,13 @@ install:
 script:
   - npm run test
 
+<<<<<<< HEAD
+=======
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      script:
+        - npm run release
+
+>>>>>>> dev
