@@ -1,4 +1,4 @@
-const fs = require('fs')
+// const fs = require('fs')
 const inquirer = require('inquirer')
 // const mockInquirer = require('mock-inquirer')
 const lib = require('../lib/includes')
@@ -21,7 +21,7 @@ const lib = require('../lib/includes')
 // })
 
 describe('files not exist', () => {
-  const backup = {}
+  // const backup = {}
   //   // jest.mock('inquirer')
   beforeAll(() => {
     //     backup.prompt = inquirer.prompt
@@ -33,9 +33,9 @@ describe('files not exist', () => {
     //     fs.mkdirSync = () => {}
     //     backup.writeFileSync = fs.writeFileSync
     //     fs.writeFileSync = () => {}
-    backup.existsSync = fs.existsSync()
+    // backup.existsSync = fs.existsSync()
 
-    fs.existsSync = () => { return Math.random() < 0.5 }
+    // fs.existsSync = () => { return Math.random() < 0.5 }
   })
 
   test('should equal test', () => {
@@ -52,7 +52,7 @@ describe('files not exist', () => {
     //     inquirer.prompt = backup.prompt
     //     fs.writeFileSync = backup.writeFileSync
     //     fs.mkdirSync = backup.mkdirSync
-    fs.existsSync = backup.existsSync
+    // fs.existsSync = backup.existsSync
   })
 })
 
