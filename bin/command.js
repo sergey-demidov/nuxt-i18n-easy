@@ -29,7 +29,7 @@ let config = {
   if (!(config instanceof Object)) {
     process.exit(1)
   }
-  await lib.checkFiles(config)
+  if (!(await lib.checkFiles(config))) { process.exit(1) }
   const phrases = lib.getSentences(config.directories, config.fileMask)
   for (const locale of config.locales) {
     // consola.warn(process.pid)
