@@ -30,7 +30,7 @@ describe('test user input', () => {
         Welcome: { translated: 'Welcome', lineNumber: 123, unused: false, opts: ['Welcome!'] },
         Inspire: { translated: 'Inspire', lineNumber: 234, unused: true, opts: [] }
       }).split(endOfLine))
-      .toContain('  Welcome: \'Welcome\', // Welcome! ')
+      .toContain("  Welcome: 'Welcome', // Welcome!")
   })
 
   it('directory dos not exist', async () => {
