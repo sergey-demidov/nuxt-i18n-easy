@@ -1,5 +1,7 @@
 # nuxt-i18n-easy
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4170ab363c8340bd8595b0c0a222a82c)](https://app.codacy.com/manual/sergey-demidov/nuxt-i18n-easy?utm_source=github.com&utm_medium=referral&utm_content=sergey-demidov/nuxt-i18n-easy&utm_campaign=Badge_Grade_Dashboard)
+
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
