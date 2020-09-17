@@ -25,8 +25,12 @@ describe('test user input', () => {
       [['Продолжать', 'Continue', null, null, 1]],
       [['verb', ['продолжаться']]]]
     axios.get.mockResolvedValue({ data: res })
+
     expect((await lib.processSentences(['Continue'], 'en', { langFile: 'test/mocks/lang/en.js' })))
       .toMatchObject({ Continue: { opts: 'продолжаться', translated: 'Продолжать', unused: false } })
+
+    expect((await lib.processSentences(['I will be translated', '“I will be translated”', 'Welcome']
+      , 'en', { langFile: 'test/mocks/lang/en.js' }))).toBeNull()
   })
 
   it('translate same lang en => en', async () => {

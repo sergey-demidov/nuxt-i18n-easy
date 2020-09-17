@@ -24,8 +24,12 @@ let config = {
 
 (async () => {
   const nuxtConfig = lib.importFile('nuxt.config.js')
+  if (!nuxtConfig) {
+    consola.error(`Cant import file\x1B[36m nuxt.config.js\x1B[0m.\n${lib.URL}`)
+    return
+  }
   config = lib.getConfig(nuxtConfig, config)
-  if (!(config instanceof Object)) { return }
+  if (typeof config !== 'object') { return }
   if (!(await lib.checkFiles(config))) { return }
   const phrases = lib.getSentences(config.directories, config.fileMask)
   if (phrases.length === 0) {

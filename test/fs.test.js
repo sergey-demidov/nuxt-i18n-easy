@@ -34,7 +34,7 @@ describe('test user input', () => {
 
   it('import file', () => {
     expect(lib.importFile).toBeDefined()
-    expect(lib.importFile('./test/mocks/nuxt.config.js')).toMatchObject({})
+    expect(lib.importFile('./test/mocks/nuxt.config.js')).toHaveProperty('i18n')
     expect(lib.importFile('./XXX')).toBeNull()
   })
   afterAll(() => {

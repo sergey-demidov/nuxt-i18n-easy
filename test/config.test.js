@@ -1,14 +1,10 @@
-import conf from './mocks/nuxt.config.js'
 const consola = require('consola')
 const lib = require('../lib/includes')
+const conf = './test/mocks/nuxt.config.js'
 
-const clone = (o) => {
-  return JSON.parse(JSON.stringify(o))
-}
-let nuxtConfig = clone(conf)
+let nuxtConfig = lib.importFile(conf)
 
 describe('test user input', () => {
-  // const backup = {}
   beforeAll(() => {
     for (const key in consola) {
       if (typeof consola[key] === 'function') {
@@ -18,7 +14,7 @@ describe('test user input', () => {
   })
 
   it('parse nuxtConfig', () => {
-    expect(lib.getConfig).toBeDefined()
+    nuxtConfig = lib.importFile(conf)
     expect(lib.getConfig(nuxtConfig, { locales: [] })).toHaveProperty('langDir', 'lang/')
     expect(lib.getConfig(nuxtConfig, { locales: [] })).toHaveProperty('locales')
     expect(lib.getConfig(nuxtConfig, { locales: [] }).locales[0]).toHaveProperty('code', 'en')
@@ -30,31 +26,26 @@ describe('test user input', () => {
   })
 
   it('parse nuxtConfig with error No Locale code', () => {
-    nuxtConfig = clone(conf)
+    nuxtConfig = lib.importFile(conf)
     delete nuxtConfig.i18n.locales[0].code
-    expect(lib.getConfig).toBeDefined()
     expect(lib.getConfig(nuxtConfig, { locales: [] })).toBeUndefined()
   })
 
   it('parse nuxtConfig with error No Locales', () => {
-    nuxtConfig = clone(conf)
+    nuxtConfig = lib.importFile(conf)
     delete nuxtConfig.i18n.locales
-    // console.dir(nuxtConfig)
-    // console.dir(conf)
     expect(lib.getConfig(nuxtConfig, { locales: [] })).toBeUndefined()
   })
 
   it('parse nuxtConfig with error No Locale file', () => {
-    nuxtConfig = clone(conf)
+    nuxtConfig = lib.importFile(conf)
     delete nuxtConfig.i18n.locales[0].file
-    expect(lib.getConfig).toBeDefined()
     expect(lib.getConfig(nuxtConfig, { locales: [] })).toBeUndefined()
   })
 
   it('parse nuxtConfig with error No langDir', () => {
-    nuxtConfig = clone(conf)
+    nuxtConfig = lib.importFile(conf)
     delete nuxtConfig.i18n.langDir
-    expect(lib.getConfig).toBeDefined()
     expect(lib.getConfig(nuxtConfig, { locales: [] })).toBeUndefined()
   })
 

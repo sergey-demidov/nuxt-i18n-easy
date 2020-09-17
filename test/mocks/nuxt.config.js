@@ -1,5 +1,9 @@
 
 export default {
+  modules: [
+    'nuxt-i18n',
+    'nuxt-i18n-easy'
+  ],
   i18n: {
     locales: [
       {
