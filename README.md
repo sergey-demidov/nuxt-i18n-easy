@@ -194,11 +194,9 @@ npm install # or yarn
 ```
 - [Link](https://docs.npmjs.com/cli/link) it to your amazing [nuxt](https://github.com/nuxt/nuxt.js) project
 ```bash
-cd nuxt-i18n-easy
 npm link
 cd ../amazing-nuxt-project
 npm link nuxt-i18n-easy
-cd ../nuxt-i18n-easy
 ```
 :nut_and_bolt::hammer: Enjoy
 
