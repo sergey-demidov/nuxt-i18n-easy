@@ -80,7 +80,7 @@ mkdir lang
 touch lang/en.js
 touch lang/ru.js
 ```
-#### 5. Buy me a coffee [:coffee:](https://www.paypal.com/paypalme/sergeydemidov)
+#### 5. Buy me a [coffee :coffee:](https://www.paypal.com/paypalme/sergeydemidov)
 ___
 
 ## Usage
@@ -138,7 +138,7 @@ Something needs to be fixed here, but in general this is what we need to start
 ```
 > A complete list of supported codes is [here](https://cloud.google.com/translate/docs/languages)
 
-#### 5. Buy me coffee with doughnut [:coffee: :doughnut:](https://www.paypal.com/paypalme/sergeydemidov)
+#### 5. Buy me [coffee with doughnut :coffee::doughnut:](https://www.paypal.com/paypalme/sergeydemidov)
 
 ## Q&A
 
@@ -182,11 +182,16 @@ en.js  en.js.2020-09-10-15-49  ru.js  ru.js.2020-09-10-15-49
 
 
 #### Q. Why are you drinking so much coffee?
-##### A. I don't just drink coffee. You can buy me a beer [:beer::beer:](https://www.paypal.com/paypalme/sergeydemidov)
+##### A. I don't just drink coffee. You can buy me a [beer :beer::beer:](https://www.paypal.com/paypalme/sergeydemidov)
 
 ## Development
 
-- Clone this repository
+- Setup this repository
+```bash
+git clone https://github.com/sergey-demidov/nuxt-i18n-easy.git
+cd nuxt-i18n-easy
+npm install # or yarn
+```
 - [Link](https://docs.npmjs.com/cli/link) it to your amazing [nuxt](https://github.com/nuxt/nuxt.js) project
 ```bash
 cd nuxt-i18n-easy
@@ -195,8 +200,7 @@ cd ../amazing-nuxt-project
 npm link nuxt-i18n-easy
 cd ../nuxt-i18n-easy
 ```
-> It is better to use `npm` here, as in my case `yarn` for some reason does __not__ create a symlinks in the `node_modules/.bin` directory
-- Edit files
+:nut_and_bolt::hammer: Enjoy
 
 ## Known Issues
 
