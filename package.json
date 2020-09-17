@@ -1,6 +1,6 @@
 {
   "name": "nuxt-i18n-easy",
-  "version": "1.1.25",
+  "version": "1.2.0",
   "description": "Automatic multilingual translator for nuxt-i18n",
   "main": "lib/module.js",
   "scripts": {
@@ -17,6 +17,8 @@
     "translate": "./bin/command.js"
   },
   "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
     "axios": "^0.20.0",
     "consola": "^2.15.0",
     "inquirer": "^7.3.3",
@@ -34,8 +36,6 @@
     "nodejs"
   ],
   "devDependencies": {
-    "@babel/core": "latest",
-    "@babel/preset-env": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@nuxtjs/eslint-config": "latest",
