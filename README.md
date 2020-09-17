@@ -16,7 +16,7 @@ But what about translating an existing project with hundreds of buttons, prompts
 
 :scream: Looks intimidating?
 
-:angel: No need to be afraid, `nuxt-i18n-easy` will save us.
+:superhero: No need to be afraid, `nuxt-i18n-easy` will save us.
 
 ## Feautures
 
@@ -32,11 +32,11 @@ But what about translating an existing project with hundreds of buttons, prompts
 
 ## Setup
 
-#### 1. Add `nuxt-i18n-easy` dependency to your project
+#### 1. Add `nuxt-i18n-easy` module to your project
 ```bash
 npm install nuxt-i18n-easy # or yarn add nuxt-i18n-easy
 ```
-#### 2. Add `nuxt-i18n-easy` to the `modules` section of `nuxt.config.js`
+#### 2. Add `nuxt-i18n` & `nuxt-i18n-easy` to the `modules` section of `nuxt.config.js`
 ```javascript
 {
   modules: [
@@ -80,7 +80,7 @@ mkdir lang
 touch lang/en.js
 touch lang/ru.js
 ```
-#### 5. Buy me a [coffee :coffee:](https://www.paypal.com/paypalme/sergeydemidov)
+#### 5. [Buy me a coffee :coffee:](https://www.paypal.com/paypalme/sergeydemidov)
 
 ___
 
@@ -137,7 +137,7 @@ Something needs to be fixed here, but in general this is what we need to start
         translationCode: uk
       },
 ```
-> A complete list of supported codes is [here](https://cloud.google.com/translate/docs/languages)
+> :u6709: A complete list of supported codes is [here](https://cloud.google.com/translate/docs/languages)
 
 #### 5. Build you project
 ```bash
@@ -148,8 +148,9 @@ npm run dev # or yarn run dev
 ```
 http://localhost:3000/ru
 ```
+> :blue_book: For more details refer to [nuxt-i18n module](https://i18n.nuxtjs.org/basic-usage) documentation
 
-#### 7. Buy me [coffee with doughnut :coffee::doughnut:](https://www.paypal.com/paypalme/sergeydemidov)
+#### 7. [Buy me coffee with doughnut :coffee::doughnut:](https://www.paypal.com/paypalme/sergeydemidov)
 
 ___
 
@@ -165,7 +166,7 @@ export default {
   'I will be translated': 'I will be translated',
 }
 ```
-> Looks like some kind of Bhagavad Gita... I am that I am... Hoommm... Stop! We need to go on
+> :lotus_position: Looks like some kind of Bhagavad Gita... I am that I am... Hoommm... Stop! We need to go on
 ##### A. It should be so. This is because we are not using slug variables.
 
 
@@ -191,11 +192,11 @@ ls lang/
 en.js  en.js.2020-09-10-15-49  ru.js  ru.js.2020-09-10-15-49
 ```
 ##### A. Dont worry, everything is as it should be here too. Before changing the configuration files, a backup is made.
-> :point_up: Dont forget to clean there at least sometimes
+> :broom: Dont forget to clean there at least sometimes
 
 
 #### Q. Why are you drinking so much coffee?
-##### A. I don't just drink coffee. You can buy me a [beer :beer::beer:](https://www.paypal.com/paypalme/sergeydemidov)
+##### A. I drink not only coffee. Also, you can [buy me a beer :beer::beer:](https://www.paypal.com/paypalme/sergeydemidov)
 
 ___
 
