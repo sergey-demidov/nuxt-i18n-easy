@@ -81,6 +81,7 @@ touch lang/en.js
 touch lang/ru.js
 ```
 #### 5. Buy me a [coffee :coffee:](https://www.paypal.com/paypalme/sergeydemidov)
+
 ___
 
 ## Usage
@@ -138,7 +139,19 @@ Something needs to be fixed here, but in general this is what we need to start
 ```
 > A complete list of supported codes is [here](https://cloud.google.com/translate/docs/languages)
 
-#### 5. Buy me [coffee with doughnut :coffee::doughnut:](https://www.paypal.com/paypalme/sergeydemidov)
+#### 5. Build you project
+```bash
+npm run dev # or yarn run dev
+```
+
+#### 6. Launch your favorite browser, follow the link given by NUXT + one of specified `locale.code`. For example
+```
+http://localhost:3000/ru
+```
+
+#### 7. Buy me [coffee with doughnut :coffee::doughnut:](https://www.paypal.com/paypalme/sergeydemidov)
+
+___
 
 ## Q&A
 
@@ -184,6 +197,8 @@ en.js  en.js.2020-09-10-15-49  ru.js  ru.js.2020-09-10-15-49
 #### Q. Why are you drinking so much coffee?
 ##### A. I don't just drink coffee. You can buy me a [beer :beer::beer:](https://www.paypal.com/paypalme/sergeydemidov)
 
+___
+
 ## Development
 
 - Setup this repository
@@ -200,9 +215,13 @@ npm link nuxt-i18n-easy
 ```
 :nut_and_bolt::hammer: Enjoy
 
+___
+
 ## Known Issues
 
 The `v-tr` directive does __not__ support nested tags
+
+___
 
 ## If you really read up to here
 
@@ -214,6 +233,8 @@ For example
 // equal to
 <nuxt-link :to="localePath('/app/profile')">Profile</nuxt-link>
 ```
+
+___
 
 ## License
 
