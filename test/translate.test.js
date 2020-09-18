@@ -29,6 +29,12 @@ describe('test user input', () => {
     expect((await lib.processSentences(['Continue'], 'en', { langFile: 'test/mocks/lang/en.js' })))
       .toMatchObject({ Continue: { opts: 'продолжаться', translated: 'Продолжать', unused: false } })
 
+    expect((await lib.processSentences(['Continue', 'Continue'], 'en', { langFile: 'test/mocks/lang/en.js' })))
+      .toMatchObject({ Continue: { opts: 'продолжаться', translated: 'Продолжать', unused: false } })
+
+    expect((await lib.processSentences(['Continue'], 'en', { langFile: 'test/mocks/lang/ERROR_NAMED.js' })))
+      .toMatchObject({ Continue: { opts: 'продолжаться', translated: 'Продолжать', unused: false } })
+
     expect((await lib.processSentences(['I will be translated', '“I will be translated”', 'Welcome']
       , 'en', { langFile: 'test/mocks/lang/en.js' }))).toBeNull()
   })

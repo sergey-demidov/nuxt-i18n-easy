@@ -3,9 +3,6 @@
 /* XXX eslint-disable no-unused-vars */
 /* XXX eslint-disable prefer-const */
 
-// const path = require('path')
-// const fs = require('fs')
-// const endOfLine = require('os').EOL
 const consola = require('consola')
 const lib = require('../lib/includes')
 
@@ -20,13 +17,14 @@ let config = {
   locales: [],
   langDir: '',
   lang: process.argv[2] || ''
-};
+}
 
-(async () => {
-  const nuxtConfig = lib.importFile('nuxt.config.js')
-  if (!nuxtConfig) {
+export const main = async () => {
+  let nuxtConfig = await lib.loadConfig()
+  nuxtConfig = lib.clone(nuxtConfig)
+  if (!nuxtConfig || nuxtConfig === {}) {
     consola.error(`Cant import file\x1B[36m nuxt.config.js\x1B[0m.\n${lib.URL}`)
-    return
+    return false
   }
   config = lib.getConfig(nuxtConfig, config)
   if (typeof config !== 'object') { return }
@@ -34,7 +32,7 @@ let config = {
   const phrases = lib.getSentences(config.directories, config.fileMask)
   if (phrases.length === 0) {
     consola.warn(`${lib.phrasesWarn}\n${lib.URL}`)
-    return
+    return false
   }
   for (const locale of config.locales) {
     if (config.lang.length && config.lang !== locale.translationCode) {
@@ -44,5 +42,7 @@ let config = {
     const result = await lib.processSentences(phrases, config.sourceLanguage, locale)
     if (result) { lib.writeConfig(locale, result) }
   }
+  return true
 }
-)()
+
+main().then(() => {})

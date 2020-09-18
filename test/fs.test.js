@@ -23,19 +23,17 @@ describe('test user input', () => {
   })
 
   it('read fs recursive', async () => {
-    expect(lib.getFiles).toBeDefined()
     await expect((await lib.getFiles('./test/mocks/pages', ['*.vue']))[0]).toMatch(/index.vue/)
   })
 
   it('directory warning', () => {
-    expect(lib.directoryWarn).toBeDefined()
     expect(lib.directoryWarn('./test/mocks/pages')).toMatch(/\/test\/mocks\/pages/i)
   })
 
-  it('import file', () => {
-    expect(lib.importFile).toBeDefined()
-    expect(lib.importFile('./test/mocks/nuxt.config.js')).toHaveProperty('i18n')
+  it('import file', async () => {
+    expect(lib.importFile('./test/mocks/lang/en.js')).toHaveProperty('Welcome')
     expect(lib.importFile('./XXX')).toBeNull()
+    expect(await lib.loadConfig()).toHaveProperty('i18nEasy')
   })
   afterAll(() => {
   })
