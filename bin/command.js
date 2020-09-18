@@ -19,7 +19,7 @@ let config = {
   lang: process.argv[2] || ''
 }
 
-export const main = async () => {
+const main = async () => {
   let nuxtConfig = await lib.loadConfig()
   nuxtConfig = lib.clone(nuxtConfig)
   if (!nuxtConfig || nuxtConfig === {}) {
@@ -46,3 +46,5 @@ export const main = async () => {
 }
 
 main().then(() => {})
+
+module.exports = main
