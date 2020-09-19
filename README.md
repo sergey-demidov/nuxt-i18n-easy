@@ -38,12 +38,10 @@ npm install nuxt-i18n-easy # or yarn add nuxt-i18n-easy
 ```
 #### 2. Add `nuxt-i18n` & `nuxt-i18n-easy` to the `modules` section of `nuxt.config.js`
 ```javascript
-{
   modules: [
     'nuxt-i18n',
     'nuxt-i18n-easy',
   ]
-}
 ```
 #### 3. Add `i18n` & `i18nEasy` to the `root` of `nuxt.config.js`
 ```javascript
