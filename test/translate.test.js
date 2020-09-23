@@ -29,6 +29,12 @@ describe('test user input', () => {
     expect((await lib.processSentences(['Continue'], 'en', { langFile: 'test/mocks/lang/en.js' })))
       .toMatchObject({ Continue: { opts: 'продолжаться', translated: 'Продолжать', unused: false } })
 
+    expect((await lib.processSentences(['Continue '], 'en', { langFile: 'test/mocks/lang/en.js' })))
+      .toMatchObject({ 'Continue ': { opts: 'продолжаться', translated: 'Продолжать ', unused: false } })
+
+    expect((await lib.processSentences([' Continue'], 'en', { langFile: 'test/mocks/lang/en.js' })))
+      .toMatchObject({ ' Continue': { opts: 'продолжаться', translated: ' Продолжать', unused: false } })
+
     expect((await lib.processSentences(['Continue', 'Continue'], 'en', { langFile: 'test/mocks/lang/en.js' })))
       .toMatchObject({ Continue: { opts: 'продолжаться', translated: 'Продолжать', unused: false } })
 
@@ -63,8 +69,10 @@ describe('test user input', () => {
       [['Продолжать', 'Continue', null, null, 1]],
       [['verb', ['продолжаться']]]]
     axios.get.mockResolvedValue({ data: res })
-    const result = await lib.translate('en', 'ru', ' Continue ')
-    expect(result).toEqual({ translated: ' Продолжать ', opts: ['продолжаться'] })
+    let result = await lib.translate('en', 'ru', 'Continue ')
+    expect(result).toEqual({ translated: 'Продолжать ', opts: ['продолжаться'] })
+    result = await lib.translate('en', 'ru', ' Continue')
+    expect(result).toEqual({ translated: ' Продолжать', opts: ['продолжаться'] })
   })
 
   it('translate width html entity number', async () => {
