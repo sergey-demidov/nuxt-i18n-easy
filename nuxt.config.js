@@ -1,3 +1,6 @@
+
+/* NEED FOR TESTS ONLY */
+
 export default {
   modules: [
   ],
