@@ -31,6 +31,8 @@ const main = async () => {
   return true
 }
 
-main().then(() => {})
+main().then(() => {
+  consola.info('done')
+})
 
 module.exports = main

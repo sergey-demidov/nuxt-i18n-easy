@@ -218,8 +218,12 @@ ___
 
 ## Known Issues
 
-The `v-tr` directive does __not__ support nested tags
-
+- The `v-tr` directive does __not__ support nested tags
+- Google translate API v1 has a limit on the number of requests. If you see something like this
+```bash 
+ ERROR Request failed with status code 429
+```
+  just try again later
 ___
 
 ## If you really read up to here
