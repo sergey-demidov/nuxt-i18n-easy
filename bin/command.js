@@ -6,27 +6,13 @@
 const consola = require('consola')
 const lib = require('../lib/includes')
 
-let config = {
-  directories: [
-    './layouts',
-    './pages',
-    './components'
-  ],
-  fileMask: ['*.vue', '*.js'],
-  sourceLanguage: 'en',
-  locales: [],
-  langDir: '',
-  lang: process.argv[2] || ''
-}
-
 const main = async () => {
-  let nuxtConfig = await lib.loadConfig()
-  nuxtConfig = lib.clone(nuxtConfig)
+  const nuxtConfig = await lib.loadConfig()
   if (!nuxtConfig || nuxtConfig === {}) {
     consola.error(`Cant import file\x1B[36m nuxt.config.js\x1B[0m.\n${lib.URL}`)
     return false
   }
-  config = lib.getConfig(nuxtConfig, config)
+  const config = lib.getConfig(nuxtConfig)
   if (typeof config !== 'object') { return }
   if (!(await lib.checkFiles(config))) { return }
   const phrases = lib.getSentences(config.directories, config.fileMask)
