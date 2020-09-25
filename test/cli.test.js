@@ -27,8 +27,8 @@ describe('test user input', () => {
     expect(await
     lib.writeConfig({ langFile: 'test/mocks/lang/en.js' },
       {
-        Welcome: { translated: 'Welcome', unused: false, opts: ['Welcome!'] },
-        Inspire: { translated: 'Inspire', unused: true, opts: [] }
+        Welcome: ['Welcome', 'Welcome!'],
+        Inspire: ['Inspire']
       }).split(endOfLine))
       .toContain("  Welcome: 'Welcome', // Welcome!")
   })
@@ -36,26 +36,27 @@ describe('test user input', () => {
   it('write sentence out', async () => {
     expect(await
     lib.writeConfig({ langFile: 'test/mocks/lang/en.js' },
-      {
-        'Welcome ': { translated: 'Welcome ', unused: false, opts: '' }
-      }).split(endOfLine))
+      { 'Welcome ': ['Welcome '] }).split(endOfLine))
       .toContain("  'Welcome ': 'Welcome '")
   })
 
   it('directory dos not exist', async () => {
+    lib.config = { langDir: 'test/mocks/XXX/', locales: [{ file: 'en.js' }] }
     for (const c of 'yn') {
       setTimeout(spit, 100, c + '\n')
-      expect(await lib.checkFiles({ langDir: 'test/mocks/XXX/', locales: [{ file: 'en.js' }] })).toBeFalsy()
+      expect(await lib.checkFiles()).toBeFalsy()
     }
   })
   it('locale file dos not exist', async () => {
+    lib.config = { langDir: 'test/mocks/lang/', locales: [{ file: 'ru.js' }] }
     for (const c of 'yn') {
       setTimeout(spit, 100, c + '\n')
-      expect(await lib.checkFiles({ langDir: 'test/mocks/lang/', locales: [{ file: 'ru.js' }] })).toBeFalsy()
+      expect(await lib.checkFiles()).toBeFalsy()
     }
   })
   it('directory and locale file exist', async () => {
-    expect(await lib.checkFiles({ langDir: 'test/mocks/lang/', locales: [{ file: 'en.js' }] })).toBeTruthy()
+    lib.config = { langDir: 'test/mocks/lang/', locales: [{ file: 'en.js' }] }
+    expect(await lib.checkFiles()).toBeTruthy()
   })
   afterAll(() => {
     fs.writeFileSync = backup.writeFileSync
