@@ -32,6 +32,7 @@ describe('test user input', () => {
 
   it('import file', async () => {
     expect(lib.importFile('./test/mocks/lang/en.js')).toHaveProperty('Welcome')
+    expect(lib.importFile('./test/mocks/lang/empty.js')).toMatchObject({})
     expect(lib.importFile('./XXX')).toMatchObject({})
     expect(await lib.loadConfig()).toHaveProperty('i18nEasy')
   })

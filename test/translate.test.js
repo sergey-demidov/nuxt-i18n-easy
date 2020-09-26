@@ -1,4 +1,6 @@
 // const fs = require('fs')
+import { beforeAll, describe, it, jest } from '@jest/globals'
+
 const axios = require('axios')
 const consola = require('consola')
 const lib = require('../lib/includes')
@@ -7,7 +9,7 @@ const lib = require('../lib/includes')
 jest.mock('axios')
 // jest.mock('fs')
 
-describe('test user input', () => {
+describe('test translate', () => {
   // const backup = {}
   beforeAll(() => {
     for (const key in consola) {
@@ -41,12 +43,12 @@ describe('test user input', () => {
     expect((await lib.processSentences(['Continue'], 'en', { langFile: 'test/mocks/lang/ERROR_NAMED.js' })))
       .toMatchObject({ Continue: ['Продолжать', 'продолжаться'] })
 
-    // expect((await lib.processSentences(['I will be translated', '“I will be translated”', 'Welcome']
-    //   , 'en', { langFile: 'test/mocks/lang/en.js' }))).toBeNull()
+    expect((await lib.processSentences(['I will be translated', '“I will be translated”', 'Welcome']
+      , 'en', { langFile: 'test/mocks/lang/en.js' }))).toBeNull()
   })
 
   it('translate same lang en => en', async () => {
-    expect((await lib.translateV1('en', 'en', 'Hello World')))
+    expect((await lib.translate('en', 'en', 'Hello World')))
       .toMatchObject(['Hello World'])
   })
 
@@ -55,7 +57,7 @@ describe('test user input', () => {
       [['Продолжать', 'Continue', null, null, 1]],
       [['verb', ['продолжаться']]]]
     axios.get.mockResolvedValue({ data: res })
-    const result = await lib.translateV1('en', 'ru', 'Continue')
+    const result = await lib.translate('en', 'ru', 'Continue')
     expect(result).toEqual(['Продолжать', 'продолжаться'])
   })
 
@@ -63,11 +65,14 @@ describe('test user input', () => {
     const res = [
       [['Продолжать', 'Continue', null, null, 1]],
       [['verb', ['продолжаться']]]]
+    // const res2 = [
+    //   [['Продолжать', 'Continue', null, null, 1]],
+    //   [['verb', ['продолжаться']]]]
     axios.get.mockResolvedValue({ data: res })
-    let result = await lib.translateV1('en', 'ru', 'Continue ')
+    let result = await lib.translate('en', 'ru', 'Continue ')
     expect(result).toEqual(['Продолжать ', 'продолжаться'])
 
-    result = await lib.translateV1('en', 'ru', ' Continue')
+    result = await lib.translate('en', 'ru', ' Continue')
     expect(result).toEqual([' Продолжать', 'продолжаться'])
   })
 
@@ -76,7 +81,7 @@ describe('test user input', () => {
       [['"Продолжать"', 'Continue', null, null, 1]],
       [['verb', ['продолжаться']]]]
     axios.get.mockResolvedValue({ data: res })
-    const result = await lib.translateV1('en', 'ru', '&#8220;Continue&#8221;')
+    const result = await lib.translate('en', 'ru', '&#8220;Continue&#8221;')
     expect(result).toEqual(['"Продолжать"', 'продолжаться'])
   })
   it('translate width various sentences', async () => {
@@ -85,14 +90,22 @@ describe('test user input', () => {
       ['Затем напишите код. '],
       ['И, наконец, отправьте их на github ».'], [null]]]
     axios.get.mockResolvedValue({ data: res })
-    const result = await lib.translateV1('en', 'ru', '“First, solve the problem. Then, write the code. And finally push them to github.”')
+    const result = await lib.translate('en', 'ru', '“First, solve the problem. Then, write the code. And finally push them to github.”')
     expect(result).toEqual(['«Во-первых, решите проблему. Затем напишите код. И, наконец, отправьте их на github ».'])
   })
 
   it('translate width error', async () => {
     const res = []
     axios.get.mockResolvedValue({ data: res })
-    const result = await lib.translateV1('en', 'ru', 'Continue')
+    const result = await lib.translate('en', 'ru', 'Continue')
+    expect(result).toEqual([])
+  })
+
+  it('translate width throw error', async () => {
+    axios.get.mockImplementation(() => {
+      throw new Error('Error')
+    })
+    const result = await lib.translate('en', 'ru', 'Continue')
     expect(result).toEqual([])
   })
   afterAll(() => {

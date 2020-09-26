@@ -20,6 +20,11 @@ const main = async () => {
     consola.warn(`${lib.phrasesWarn}\n${lib.URL}`)
     return false
   }
+  if (lib.config.googleProjectId.length > 0) {
+    consola.info('Translate with Google Translate API\x1B[93m V2 \x1B[0m')
+  } else {
+    consola.info('Translate with Google Translate API\x1B[93m V1 \x1B[0m')
+  }
   for (const locale of config.locales) {
     if (config.lang.length && config.lang !== locale.translationCode) {
       consola.info(`Translation from \x1B[36m${config.sourceLanguage}\x1B[0m to \x1B[36m${locale.translationCode}\x1B[0m will not be executed because the command line was specified filter \x1B[36m${config.lang}\x1B[0m`)
@@ -32,7 +37,7 @@ const main = async () => {
 }
 
 main().then(() => {
-  consola.info('done')
+  consola.success('done')
 })
 
 module.exports = main
