@@ -63,14 +63,16 @@ export default {
     langDir: 'lang/',
   },
   i18nEasy: {
-    directories: [             // default directories for search
+    directories: [                         // default directories for search
       './layouts',
       './pages',
       './components'
     ],
-    files: ['*.vue', '*.js'],  // default files
-    sourceLanguage: 'en'       // default source language
+    files: ['*.vue', '*.js'],              // default files
+    sourceLanguage: 'en',                  // default source language
+    googleProjectId: 'lively-guard-123456' // See below
   },
+...
 ```
 #### 4. Create a directory `i18n.langDir` and configuration files
 ```bash
@@ -78,7 +80,27 @@ mkdir lang
 touch lang/en.js
 touch lang/ru.js
 ```
-#### 5. [Buy me a coffee :coffee:](https://www.paypal.com/paypalme/sergeydemidov)
+
+#### 5. Google Translation API
+By default, the app uses Google translation API `V1`. 
+It's free, but undocumented and has traffic restrictions. 
+If you see in console something like this
+```bash 
+ ERROR Request failed with status code 429
+```
+then the restriction has already been applied. 
+
+> Go make yourself a sandwich, after a while everything will work again
+
+To switch to the official paid `V2` version of the API, 
+you just need to specify your project identifier `googleProjectId` in `i18nEasy` section
+
+##### [Google translate API official documentation](https://cloud.google.com/translate/docs/setup)
+
+> If you don't understand anything there - [here](https://www.garysnotebook.com/20190409_2) is a simple guide
+
+
+#### 6. [Buy me a coffee :coffee:](https://www.paypal.com/paypalme/sergeydemidov)
 
 ___
 
