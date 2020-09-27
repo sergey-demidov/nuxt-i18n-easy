@@ -1,13 +1,10 @@
-// const fs = require('fs')
 import { beforeAll, describe, it, jest } from '@jest/globals'
-
 const axios = require('axios')
 const consola = require('consola')
+
 const lib = require('../lib/includes')
-// const jest = require('jest')
 
 jest.mock('axios')
-// jest.mock('fs')
 
 describe('test translate', () => {
   // const backup = {}
@@ -65,9 +62,6 @@ describe('test translate', () => {
     const res = [
       [['Продолжать', 'Continue', null, null, 1]],
       [['verb', ['продолжаться']]]]
-    // const res2 = [
-    //   [['Продолжать', 'Continue', null, null, 1]],
-    //   [['verb', ['продолжаться']]]]
     axios.get.mockResolvedValue({ data: res })
     let result = await lib.translate('en', 'ru', 'Continue ')
     expect(result).toEqual(['Продолжать ', 'продолжаться'])
@@ -108,6 +102,25 @@ describe('test translate', () => {
     const result = await lib.translate('en', 'ru', 'Continue')
     expect(result).toEqual([])
   })
+
+  it('translate diff lang en => ru GT API.V2 1', async () => {
+    lib.config.googleProjectId = 'XXX'
+    const res = ['Вдохновлять', { data: { translations: [{ translatedText: 'Вдохновлять' }] } }]
+    lib.google = {}
+    lib.google.translate = () => { return Promise.resolve(res) }
+    const result = await lib.translate('en', 'ru', 'Inspire')
+    expect(result).toEqual(['Вдохновлять', 'Вдохновлять'])
+  })
+
+  it('translate diff lang en => ru GT API.V2 2', async () => {
+    lib.config.googleProjectId = 'XXX'
+    const res = 'Вдохновлять'
+    lib.google = {}
+    lib.google.translate = () => { return Promise.resolve(res) }
+    const result = await lib.translate('en', 'ru', 'Inspire')
+    expect(result).toEqual(['Вдохновлять'])
+  })
+
   afterAll(() => {
   })
 })

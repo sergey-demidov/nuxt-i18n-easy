@@ -2,6 +2,8 @@ const fs = require('fs')
 const endOfLine = require('os').EOL
 const stdin = require('mock-stdin').stdin()
 const consola = require('consola')
+// const inquirer = require('inquirer')
+
 const lib = require('../lib/includes')
 
 const spit = (arg) => {
@@ -10,6 +12,9 @@ const spit = (arg) => {
 describe('test user input', () => {
   const backup = {}
   beforeAll(() => {
+    // console.error = jest.fn().mockImplementation(() => {})
+    // console.info = jest.fn().mockImplementation(() => {})
+    process.stdout.write = () => {}
     backup.mkdirSync = fs.mkdirSync
     backup.writeFileSync = fs.writeFileSync
     backup.copyFileSync = fs.copyFileSync
