@@ -18,11 +18,15 @@ But what about translating an existing project with hundreds of buttons, prompts
 
 :superhero: No need to be afraid, `nuxt-i18n-easy` will save us.
 
+
+![Demo](demo.gif)
+
+
 ## Feautures
 
 - Based on [nuxt-i18n](https://github.com/nuxt-community/i18n-module)'s  [lazy-load translations](https://i18n.nuxtjs.org/lazy-load-translations)
-- Uses _existing_ strings as object properties
-- _Recursively_ scans the source code directories in the project
+- Uses __existing__ strings as object properties
+- Recursively scans the source code directories in the project
 - Finds the strings that need translation
 - Translates found strings using Google translate API
 - Checks that the found strings and properties of the `i18n` config match
@@ -61,6 +65,7 @@ export default {
     ],
     lazy: true,
     langDir: 'lang/',
+    defaultLocale: 'en'
   },
   i18nEasy: {
     directories: [                         // default directories for search
