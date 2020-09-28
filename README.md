@@ -16,10 +16,10 @@ But what about translating an existing project with hundreds of buttons, prompts
 
 :scream: Looks intimidating?
 
-:superhero: No need to be afraid, `nuxt-i18n-easy` will save us.
+:angel: No need to be afraid, `nuxt-i18n-easy` will save us.
 
 
-![Demo](demo.gif)
+![Demo](demo-1.gif)
 
 
 ## Feautures
@@ -110,6 +110,8 @@ you just need to specify your project identifier `googleProjectId` in `i18nEasy`
 ___
 
 ## Usage
+
+![Usage](demo-2.gif)
 
 #### 1. Strings to be translated may be designated as follows:
  classic:
