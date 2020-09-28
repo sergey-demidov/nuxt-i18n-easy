@@ -8,7 +8,7 @@ const lib = require('../lib/includes')
 
 const main = async () => {
   const nuxtConfig = await lib.loadConfig()
-  if (!nuxtConfig || nuxtConfig === {}) {
+  if (!nuxtConfig || Object.keys(nuxtConfig).length === 0) {
     consola.error(`Cant import file\x1B[36m nuxt.config.js\x1B[0m.\n${lib.URL}`)
     return false
   }

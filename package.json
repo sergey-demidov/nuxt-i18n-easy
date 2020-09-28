@@ -52,7 +52,6 @@
   },
   "publishConfig": {
     "access": "public"
-    "publishConfig": { "registry": "https://npm.pkg.github.com/" }
   },
   "repository": {
     "type": "git",
