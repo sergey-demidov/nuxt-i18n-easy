@@ -5,6 +5,7 @@
 [![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
 [![Codecov][codecov-src]][codecov-href]
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cd0b66c7313f44dcaca7ff3e6a84a21c)](https://www.codacy.com/manual/sergey-demidov/nuxt-i18n-easy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sergey-demidov/nuxt-i18n-easy&amp;utm_campaign=Badge_Grade)
+[![DeepScan grade](https://deepscan.io/api/teams/10927/projects/13861/branches/244113/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=10927&pid=13861&bid=244113)
 [![License][license-src]][license-href]
 
 > Automatic multilingual translator for nuxt-i18n
