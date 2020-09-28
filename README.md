@@ -98,7 +98,7 @@ then the restriction has already been applied.
 > Go make yourself a sandwich, after a while everything will work again
 
 To switch to the official paid `V2` version of the API, 
-you just need to specify your project identifier `googleProjectId` in `i18nEasy` section
+you need to specify your project identifier `googleProjectId` in [i18nEasy](nuxt-i18n-easy#3-add-i18n--i18neasy-to-the-root-of-nuxtconfigjs) section
 
 ##### [Google translate API official documentation](https://cloud.google.com/translate/docs/setup)
 
