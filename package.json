@@ -1,10 +1,10 @@
 {
   "name": "nuxt-i18n-easy",
   "version": "1.4.7",
-  "description": "Automatic multilingual translator for nuxt-i18n",
+  "license": "MIT",
+  "description": "Automated multilingual text translator for Nuxt i18n module",
   "main": "lib/module.js",
   "scripts": {
-    "dev": "nuxt example",
     "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
     "test": "yarn lint && jest"
@@ -30,7 +30,6 @@
     "nuxt",
     "nuxt-module",
     "i18n",
-    "easy",
     "translate",
     "cli",
     "node",
