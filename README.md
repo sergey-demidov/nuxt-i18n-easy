@@ -20,7 +20,7 @@ But what about translating an existing project with hundreds of buttons, prompts
 :angel: No need to be afraid, `nuxt-i18n-easy` will save us.
 
 
-![Demo](demo-1.gif)
+![Demo](demo-0.gif)
 
 
 ## Feautures
@@ -112,7 +112,7 @@ ___
 
 ## Usage
 
-![Usage](demo-2.gif)
+![Usage](demo-1.gif)
 
 #### 1. Strings to be translated may be designated as follows:
  classic:
