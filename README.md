@@ -20,7 +20,6 @@ But what about translating an existing project with hundreds of buttons, prompts
 :angel: No need to be afraid, `nuxt-i18n-easy` will save us.
 
 
-![Demo](demo-0.gif)
 
 
 ## Feautures
@@ -34,6 +33,8 @@ But what about translating an existing project with hundreds of buttons, prompts
 - Writes found values to i18n configuration files
 - Adds syntactic sugar
 - In general, makes life much easier :bath::zzz:
+
+- [short demo](demo-0.gif)
 
 ## Setup
 
@@ -112,7 +113,7 @@ ___
 
 ## Usage
 
-![Usage](demo-1.gif)
+[long demo](demo-1.gif)
 
 #### 1. Strings to be translated may be designated as follows:
  classic:
