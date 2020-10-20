@@ -19,10 +19,7 @@ But what about translating an existing project with hundreds of buttons, prompts
 
 :angel: No need to be afraid, `nuxt-i18n-easy` will save us.
 
-
-
-
-## Feautures
+## Features
 
 - Based on [nuxt-i18n](https://github.com/nuxt-community/i18n-module)'s  [lazy-load translations](https://i18n.nuxtjs.org/lazy-load-translations)
 - Uses __existing__ strings as object properties
@@ -112,8 +109,6 @@ you need to specify your project identifier `googleProjectId` in [i18nEasy](#3-a
 ___
 
 ## Usage
-
-[long demo](demo-1.gif)
 
 #### 1. Strings to be translated may be designated as follows:
  classic:
