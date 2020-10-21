@@ -1,6 +1,6 @@
 {
   "name": "nuxt-i18n-easy",
-  "version": "1.4.11",
+  "version": "1.5.1",
   "license": "MIT",
   "description": "Automated multilingual text translator for Nuxt i18n module",
   "main": "lib/module.js",

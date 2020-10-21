@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/sergey-demidov/nuxt-i18n-easy/compare/v1.4.11...v1.5.1) (2020-10-21)
+
 ### [1.4.11](https://github.com/sergey-demidov/nuxt-i18n-easy/compare/v1.4.10...v1.4.11) (2020-10-20)
 
 ### [1.4.10](https://github.com/sergey-demidov/nuxt-i18n-easy/compare/v1.4.9...v1.4.10) (2020-10-07)
