@@ -21,7 +21,7 @@ But what about translating an existing project with hundreds of buttons, prompts
 
 ## Features
 
-- Based on [nuxt-i18n](https://github.com/nuxt-community/i18n-module)'s  [lazy-load translations](https://i18n.nuxtjs.org/lazy-load-translations)
+- Based on `nuxt-i18n` [lazy-load translations](https://i18n.nuxtjs.org/lazy-load-translations)
 - Uses __existing__ strings as object properties
 - Recursively scans the source code directories in the project
 - Finds the strings that need translation
@@ -31,7 +31,7 @@ But what about translating an existing project with hundreds of buttons, prompts
 - Adds syntactic sugar
 - In general, makes life much easier :bath::zzz:
 
-- [short demo](demo-0.gif)
+[short demo](demo-0.gif)
 
 ## Setup
 
@@ -74,7 +74,6 @@ export default {
     ],
     files: ['*.vue', '*.js'],              // default files
     sourceLanguage: 'en',                  // default source language
-    googleProjectId: 'lively-guard-123456' // See below
   },
 ...
 ```
@@ -85,26 +84,7 @@ touch lang/en.js
 touch lang/ru.js
 ```
 
-#### 5. Google Translation API
-By default, the app uses Google translation API `V1`. 
-It's free, but undocumented and has traffic restrictions. 
-If you see in console something like this
-```bash 
- ERROR Request failed with status code 429
-```
-then the restriction has already been applied. 
-
-> Go make yourself a sandwich, after a while everything will work again
-
-To switch to the official paid `V2` version of the API, 
-you need to specify your project identifier `googleProjectId` in [i18nEasy](#3-add-i18n--i18neasy-to-the-root-of-nuxtconfigjs) section
-
-##### [Google translate API official documentation](https://cloud.google.com/translate/docs/setup)
-
-> If you don't understand anything there - [here](https://www.garysnotebook.com/20190409_2) is a simple guide
-
-
-#### 6. [Buy me a coffee :coffee:](https://www.paypal.com/paypalme/sergeydemidov)
+#### 5. [Buy me a coffee :coffee:](https://www.paypal.com/paypalme/sergeydemidov)
 
 ___
 
@@ -224,6 +204,12 @@ en.js  en.js.2020-09-10-15-49  ru.js  ru.js.2020-09-10-15-49
 
 ___
 
+## Google Translation API
+By default, the app uses Google translation API `V1`.
+It's free, but undocumented and has traffic restrictions. 
+To switch to the official `V2` version of the API,
+you need to specify your project identifier `googleProjectId` in `i18nEasy` section
+
 ## Development
 
 - Setup this repository
@@ -245,11 +231,13 @@ ___
 ## Known Issues
 
 - The `v-tr` directive does __not__ support nested tags
-- Google translate API v1 has a limit on the number of requests. If you see something like this
+- Google translate API v1 has a limit on the number of requests.
+
+If you see something like this
 ```bash 
  ERROR Request failed with status code 429
 ```
-  just try again later
+just try again later
 ___
 
 ## If you really read up to here
