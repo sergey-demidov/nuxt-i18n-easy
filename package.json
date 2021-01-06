@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@google-cloud/translate": "^6.0.3",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "consola": "^2.15.0",
     "dotenv": "^8.2.0",
     "inquirer": "^7.3.3",
